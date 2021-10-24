@@ -10,13 +10,14 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 from functools import wraps
 import smtplib
+import configs
 
-
-MY_EMAIL = "{my_email}"
-PASSWORD = "{my_email_password}"
+MY_EMAIL = configs.my_email
+PASSWORD = configs.password
+# BLOG_URL = "https://api.npoint.io/ed99320662742443cc5b"
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '{your_secret_key}'
+app.config['SECRET_KEY'] = configs.secret_key
 ckeditor = CKEditor(app)
 Bootstrap(app)
 gravatar = Gravatar(
